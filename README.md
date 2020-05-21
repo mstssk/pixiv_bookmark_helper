@@ -1,0 +1,2 @@
+# pixiv_bookmark_tagging
+pixivでブックマークタグ括登録するボタンを付ける
