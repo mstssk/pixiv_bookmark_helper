@@ -2,22 +2,24 @@ import copy from 'rollup-plugin-copy';
 import typescript from '@rollup/plugin-typescript';
 import cleaner from 'rollup-plugin-cleaner';
 
+const OUT_DIR = "./dist";
+
 export default {
   input: 'src/index.ts',
   output: {
-    dir: "dist",
+    dir: OUT_DIR,
     format: 'es'
   },
   plugins: [
     cleaner({
-      targets: ["./dist"]
+      targets: [OUT_DIR]
     }),
     typescript(),
     copy({
       targets: [
         {
           src: 'src/manifest.json',
-          dest: 'dist',
+          dest: OUT_DIR,
           transform(content) {
             const manifest = JSON.parse(content);
             manifest.version = process.env.npm_package_version;
