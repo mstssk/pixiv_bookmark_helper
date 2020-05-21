@@ -1,0 +1,19 @@
+{
+  "name": "pixiv_bookmark_tagging",
+  "version": "0.0.1",
+  "description": "pixivでブックマークタグ括登録するボタンを付ける",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstssk/pixiv_bookmark_tagging.git"
+  },
+  "author": "mstssk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mstssk/pixiv_bookmark_tagging/issues"
+  },
+  "homepage": "https://github.com/mstssk/pixiv_bookmark_tagging#readme"
+}
