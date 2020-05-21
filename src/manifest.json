@@ -1,0 +1,20 @@
+{
+  "name": "pixivでブックマークタグ一括登録するボタン",
+  "version": "",
+  "description": "",
+  "permissions": [],
+  "icons": {},
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.pixiv.net/bookmark_add.php?*",
+        "https://www.pixiv.net/novel/bookmark_add.php?*"
+      ],
+      "js": [
+        "index.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [],
+  "manifest_version": 2
+}

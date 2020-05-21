@@ -4,7 +4,8 @@
   "description": "pixivでブックマークタグ括登録するボタンを付ける",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build",
+    "build": "rollup -c rollup.config.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/mstssk/pixiv_bookmark_tagging/issues"
   },
-  "homepage": "https://github.com/mstssk/pixiv_bookmark_tagging#readme"
+  "homepage": "https://github.com/mstssk/pixiv_bookmark_tagging#readme",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^4.1.2",
+    "rollup": "^2.10.5",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.3"
+  }
 }
