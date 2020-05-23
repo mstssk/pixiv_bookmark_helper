@@ -22,6 +22,7 @@ export default {
           dest: OUT_DIR,
           transform(content) {
             const manifest = JSON.parse(content);
+            manifest.description = process.env.npm_package_description;
             manifest.version = process.env.npm_package_version;
             return JSON.stringify(manifest, null, 2);
           }
