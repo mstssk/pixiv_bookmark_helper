@@ -1,8 +1,8 @@
 {
+  "manifest_version": 2,
   "name": "pixivでブックマークタグ一括登録するボタン",
   "version": "",
   "description": "",
-  "permissions": [],
   "icons": {},
   "content_scripts": [
     {
@@ -14,7 +14,5 @@
         "index.js"
       ]
     }
-  ],
-  "web_accessible_resources": [],
-  "manifest_version": 2
+  ]
 }
