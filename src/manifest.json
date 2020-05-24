@@ -14,9 +14,7 @@
         "https://www.pixiv.net/bookmark_add.php?*",
         "https://www.pixiv.net/novel/bookmark_add.php?*"
       ],
-      "js": [
-        "index.js"
-      ]
+      "js": ["index.js"]
     }
   ]
 }
