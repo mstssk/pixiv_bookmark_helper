@@ -3,7 +3,11 @@
   "name": "pixivでブックマークタグ一括登録するボタン",
   "version": "",
   "description": "",
-  "icons": {},
+  "icons": {
+    "16": "img/icon_16.png",
+    "48": "img/icon_48.png",
+    "128": "img/icon_128.png"
+  },
   "content_scripts": [
     {
       "matches": [

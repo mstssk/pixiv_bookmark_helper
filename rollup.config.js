@@ -18,6 +18,10 @@ export default {
     copy({
       targets: [
         {
+          src: 'src/img',
+          dest: OUT_DIR,
+        },
+        {
           src: 'src/manifest.json',
           dest: OUT_DIR,
           transform(content) {
