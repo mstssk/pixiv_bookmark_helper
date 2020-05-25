@@ -5,7 +5,7 @@ import cleaner from "rollup-plugin-cleaner";
 const OUT_DIR = "./dist";
 
 export default {
-  input: "src/index.ts",
+  input: ["src/index.ts", "src/background.ts"],
   output: {
     dir: OUT_DIR,
     format: "es",

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mstssk/pixiv_bookmark_tagging#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^4.1.2",
+    "@types/chrome": "0.0.114",
     "rollup": "^2.10.5",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-copy": "^3.3.0",
