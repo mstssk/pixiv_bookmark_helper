@@ -12,8 +12,7 @@ declare namespace chrome.contextMenus {
 }
 
 (async function () {
-  await promisify(chrome.contextMenus.onClicked.removeListener);
-  await promisify(chrome.contextMenus.removeAll);
+  await promisify(chrome.contextMenus.removeAll)();
 
   chrome.contextMenus.create({
     id: "bookmark_illust",
