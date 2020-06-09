@@ -1,7 +1,7 @@
 {
   "name": "pixiv_bookmark_tagging",
   "version": "0.0.1",
-  "description": "pixivのブックマーク編集画面にタグを一括登録するボタンを表示します",
+  "description": "pixivのブックマーク機能を補助するツールです。",
   "scripts": {
     "test": "npm run build",
     "build": "rollup --config",
