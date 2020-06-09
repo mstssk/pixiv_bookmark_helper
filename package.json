@@ -1,6 +1,6 @@
 {
-  "name": "pixiv_bookmark_tagging",
-  "version": "0.0.1",
+  "name": "pixiv_bookmark_helper",
+  "version": "0.0.2",
   "description": "pixivのブックマーク機能を補助するツールです。",
   "scripts": {
     "test": "npm run build",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mstssk/pixiv_bookmark_tagging.git"
+    "url": "git+https://github.com/mstssk/pixiv_bookmark_helper.git"
   },
   "author": "mstssk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mstssk/pixiv_bookmark_tagging/issues"
+    "url": "https://github.com/mstssk/pixiv_bookmark_helper/issues"
   },
-  "homepage": "https://github.com/mstssk/pixiv_bookmark_tagging#readme",
+  "homepage": "https://github.com/mstssk/pixiv_bookmark_helper#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^4.1.2",
     "@types/chrome": "0.0.114",
