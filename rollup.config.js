@@ -1,6 +1,6 @@
 import copy from "rollup-plugin-copy";
 import typescript from "@rollup/plugin-typescript";
-import cleaner from "rollup-plugin-cleaner";
+import { cleandir } from "rollup-plugin-cleandir";
 
 const OUT_DIR = "./dist";
 
@@ -11,9 +11,7 @@ export default {
     format: "es",
   },
   plugins: [
-    cleaner({
-      targets: [OUT_DIR],
-    }),
+    cleandir(OUT_DIR),
     typescript(),
     copy({
       targets: [
