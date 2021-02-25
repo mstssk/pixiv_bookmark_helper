@@ -22,7 +22,7 @@
     "@types/chrome": "0.0.114",
     "rollup": "^2.10.5",
     "rollup-plugin-cleandir": "0.0.1",
-    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-copy": "^3.4.0",
     "tslib": "^2.0.0",
     "typescript": "^3.9.3"
   }
