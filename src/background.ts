@@ -1,19 +1,4 @@
-import { promisify } from "./util";
-
-type MENU_ITEM = "bookmark_illust" | "bookmark_novel";
-
-declare namespace chrome.contextMenus {
-  interface CreateProperties {
-    id?: MENU_ITEM;
-  }
-  interface OnClickData {
-    menuItemId: MENU_ITEM;
-  }
-}
-
-(async function () {
-  await promisify(chrome.contextMenus.removeAll)();
-
+chrome.contextMenus.removeAll(() => {
   chrome.contextMenus.create({
     id: "bookmark_illust",
     title: "イラスト・マンガのブックマークを開く",
@@ -27,7 +12,7 @@ declare namespace chrome.contextMenus {
   });
 
   chrome.contextMenus.onClicked.addListener((info) => {
-    let url = "";
+    let url: string;
     switch (info.menuItemId) {
       case "bookmark_illust":
         url = "https://www.pixiv.net/bookmark.php";
@@ -40,4 +25,4 @@ declare namespace chrome.contextMenus {
     }
     chrome.tabs.create({ url });
   });
-})();
+});
