@@ -5,7 +5,8 @@
   "scripts": {
     "test": "npm run build",
     "build": "rollup --config",
-    "fmt": "npx prettier --write ."
+    "fmt": "npx prettier --write .",
+    "lint": "npx prettier --check ."
   },
   "repository": {
     "type": "git",
