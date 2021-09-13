@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/mstssk/pixiv_bookmark_helper#readme",
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.2.1",
+    "@rollup/plugin-typescript": "^8.2.5",
     "@types/chrome": "0.0.145",
     "rollup": "^2.51.1",
     "rollup-plugin-cleandir": "1.0.0",
