@@ -2,13 +2,13 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: "bookmark_illust",
     title: "イラスト・マンガのブックマークを開く",
-    contexts: ["page_action"],
+    contexts: ["action"],
   });
 
   chrome.contextMenus.create({
     id: "bookmark_novel",
     title: "小説のブックマークを開く",
-    contexts: ["page_action"],
+    contexts: ["action"],
   });
 });
 
