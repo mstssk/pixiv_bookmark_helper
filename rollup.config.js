@@ -11,7 +11,7 @@ export default {
     format: "es",
   },
   plugins: [
-    cleandir(OUT_DIR),
+    cleandir(),
     typescript(),
     copy({
       targets: [
