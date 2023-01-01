@@ -2,6 +2,7 @@
   "name": "pixiv_bookmark_helper",
   "version": "0.1.2",
   "description": "pixivのブックマーク機能を補助するツールです。",
+  "type": "module",
   "scripts": {
     "test": "npm run build",
     "build": "rollup --config",
