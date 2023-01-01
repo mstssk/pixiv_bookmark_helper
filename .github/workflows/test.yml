@@ -13,8 +13,7 @@ jobs:
       - run: npm cit
       - name: Run linters
         if: ${{ always() }}
-        uses: samuelmeuli/lint-action@v1
+        uses: wearerequired/lint-action@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           prettier: true
           prettier_command_prefix: npx
