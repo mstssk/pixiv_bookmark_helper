@@ -11,6 +11,7 @@ jobs:
         with:
           node-version: 16
       - run: npm cit
+      - run: node .github/workflows/verify_build.mjs
       - name: Run linters
         if: ${{ always() }}
         uses: wearerequired/lint-action@v2
