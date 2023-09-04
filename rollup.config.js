@@ -14,6 +14,7 @@ export default {
     cleandir(),
     typescript(),
     copy({
+      hook: "generateBundle", // cleandir の実行タイミングより後に実行する
       targets: [
         {
           src: "src/img",
