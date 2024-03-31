@@ -22,7 +22,7 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.4",
     "@types/chrome": "^0.0.263",
-    "glob": "^10.3.10",
+    "glob": "^10.3.12",
     "rollup": "^3.29.4",
     "rollup-plugin-cleandir": "^2.0.0",
     "rollup-plugin-copy": "^3.5.0",
