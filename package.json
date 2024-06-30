@@ -26,6 +26,6 @@
     "rollup": "^4.13.2",
     "rollup-plugin-cleandir": "^2.0.0",
     "rollup-plugin-copy": "^3.5.0",
-    "typescript": "^5.4.3"
+    "typescript": "^5.5.2"
   }
 }
