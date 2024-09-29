@@ -11,7 +11,7 @@ export default {
     format: "es",
   },
   plugins: [
-    cleandir(),
+    cleandir(OUT_DIR),
     typescript(),
     copy({
       hook: "generateBundle", // cleandir の実行タイミングより後に実行する
