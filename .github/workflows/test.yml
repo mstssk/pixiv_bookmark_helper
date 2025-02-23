@@ -6,15 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
       - run: npm cit
       - run: node .github/workflows/verify_build.mjs
-      - name: Run linters
-        if: ${{ always() }}
-        uses: wearerequired/lint-action@v2
-        with:
-          prettier: true
-          prettier_command_prefix: npx
+      - if: ${{ always() }}
+        run: npm run lint
