@@ -11,5 +11,5 @@ jobs:
           node-version: "lts/*"
       - run: npm cit
       - run: node .github/workflows/verify_build.mjs
-      - if: ${{ always() }}
+      - if: ${{ !cancelled() }}
         run: npm run lint
