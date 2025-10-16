@@ -1,22 +1,31 @@
-setTimeout(async () => {
-  const anchor = document.querySelector("a");
-  if (anchor && anchor.href === anchor.textContent.trim()) {
-    const root = anchor.closest("div")!;
-    const countdownElement = document.createElement("span");
-    root.appendChild(countdownElement);
+import { ID_OPTION_JUMP } from "./constants";
 
-    await countdown(countdownElement);
+(() => {
+  chrome.storage.local.get(ID_OPTION_JUMP).then((items) => {
+    const jump = items[ID_OPTION_JUMP] ?? false;
+    if (jump) {
+      setTimeout(async () => {
+        const anchor = document.querySelector("a");
+        if (anchor && anchor.href === anchor.textContent.trim()) {
+          const root = anchor.closest("div")!;
+          const countdownElement = document.createElement("span");
+          root.appendChild(countdownElement);
 
-    anchor.click();
-  }
-}, 1000);
+          await countdown(countdownElement);
 
-async function countdown(view: HTMLSpanElement) {
-  let remainingSeconds = 5;
-  for (; remainingSeconds >= 0; remainingSeconds--) {
-    view.textContent = ` ${remainingSeconds}秒後に移動します`;
-    if (remainingSeconds > 0) {
-      await new Promise((r) => setTimeout(r, 1000));
+          anchor.click();
+        }
+      }, 1000);
+    }
+  });
+
+  async function countdown(view: HTMLSpanElement) {
+    let remainingSeconds = 5;
+    for (; remainingSeconds >= 0; remainingSeconds--) {
+      view.textContent = ` ${remainingSeconds}秒後に移動します`;
+      if (remainingSeconds > 0) {
+        await new Promise((r) => setTimeout(r, 1000));
+      }
     }
   }
-}
+})();
