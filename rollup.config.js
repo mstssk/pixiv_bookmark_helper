@@ -1,6 +1,8 @@
-import copy from "rollup-plugin-copy";
+import fs from "node:fs/promises";
 import typescript from "@rollup/plugin-typescript";
 import { cleandir } from "rollup-plugin-cleandir";
+import srcManifest from "./src/manifest.json" with { type: "json" };
+import srcPackage from "./package.json" with { type: "json" };
 
 const OUT_DIR = "./dist";
 
@@ -13,24 +15,22 @@ export default {
   plugins: [
     cleandir(OUT_DIR),
     typescript(),
-    copy({
-      hook: "generateBundle", // cleandir の実行タイミングより後に実行する
-      targets: [
-        {
-          src: "src/img",
-          dest: OUT_DIR,
-        },
-        {
-          src: "src/manifest.json",
-          dest: OUT_DIR,
-          transform(content) {
-            const manifest = JSON.parse(content);
-            manifest.description = process.env.npm_package_description;
-            manifest.version = process.env.npm_package_version;
-            return JSON.stringify(manifest, null, 2);
-          },
-        },
-      ],
-    }),
+    {
+      async writeBundle() {
+        // アイコン
+        await fs.cp("src/img", `${OUT_DIR}/img`, { recursive: true });
+
+        // manifest.json
+        const manifest = {
+          ...srcManifest,
+          description: srcPackage.description,
+          version: srcPackage.version,
+        };
+        await fs.writeFile(
+          `${OUT_DIR}/manifest.json`,
+          JSON.stringify(manifest, null, 2),
+        );
+      },
+    },
   ],
 };
