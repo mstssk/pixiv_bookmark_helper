@@ -7,7 +7,7 @@ import srcPackage from "./package.json" with { type: "json" };
 const OUT_DIR = "./dist";
 
 export default {
-  input: ["src/index.ts", "src/background.ts"],
+  input: ["src/index.ts", "src/jump.ts", "src/background.ts"],
   output: {
     dir: OUT_DIR,
     format: "es",

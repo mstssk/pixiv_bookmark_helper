@@ -8,6 +8,7 @@ const expected = [
   "img/icon_16.png",
   "img/icon_48.png",
   "index.js",
+  "jump.js",
   "manifest.json",
 ];
 const actual = globSync("./**/*", { cwd: "./dist" }).sort();
