@@ -1,6 +1,5 @@
 import { strict as assert } from "node:assert";
-import { statSync } from "node:fs";
-import { globSync } from "glob";
+import { statSync, globSync } from "node:fs";
 
 const expected = [
   "background.js",
