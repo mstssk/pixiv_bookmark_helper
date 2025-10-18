@@ -6,8 +6,8 @@
   "scripts": {
     "test": "npm run build",
     "build": "tsc --noEmit && node build.js",
-    "fmt": "npx prettier --write .",
-    "lint": "npx prettier --check ."
+    "fmt": "prettier --write .",
+    "lint": "prettier --check ."
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "@mstssk/cleandir": "^3.0.0",
     "@types/chrome": "^0.0.328",
     "esbuild": "0.25.11",
+    "prettier": "^3.6.2",
     "typescript": "^5.9.2"
   }
 }
