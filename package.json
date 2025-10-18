@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "npm run build",
-    "build": "rollup --config",
+    "build": "tsc --noEmit && node build.js",
     "fmt": "npx prettier --write .",
     "lint": "npx prettier --check ."
   },
@@ -20,11 +20,9 @@
   },
   "homepage": "https://github.com/mstssk/pixiv_bookmark_helper#readme",
   "devDependencies": {
-    "@rollup/plugin-typescript": "^12.1.4",
+    "@mstssk/cleandir": "^3.0.0",
     "@types/chrome": "^0.0.328",
-    "rollup": "^4.52.0",
-    "rollup-plugin-cleandir": "^3.0.0",
-    "tslib": "*",
+    "esbuild": "0.25.11",
     "typescript": "^5.9.2"
   }
 }
