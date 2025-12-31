@@ -25,6 +25,6 @@
     "rollup": "^4.52.0",
     "rollup-plugin-cleandir": "^3.0.0",
     "tslib": "*",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }
