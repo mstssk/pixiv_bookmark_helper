@@ -1,3 +1,5 @@
+import { ID_OPTION_JUMP } from "./constants";
+
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: "bookmark_illust",
@@ -10,19 +12,38 @@ chrome.runtime.onInstalled.addListener(() => {
     title: "小説のブックマークを開く",
     contexts: ["action"],
   });
+
+  const optionsId = chrome.contextMenus.create({
+    id: "options",
+    title: "オプション",
+    contexts: ["action"],
+  });
+  chrome.storage.local.get(ID_OPTION_JUMP).then((items) => {
+    const checked = items[ID_OPTION_JUMP] ?? false;
+    chrome.contextMenus.create({
+      parentId: optionsId,
+      id: ID_OPTION_JUMP,
+      title: "別サイトへのリンクを自動でジャンプする",
+      contexts: ["action"],
+      type: "checkbox",
+      checked,
+    });
+  });
 });
 
 chrome.contextMenus.onClicked.addListener((info) => {
-  let url: string;
   switch (info.menuItemId) {
     case "bookmark_illust":
-      url = "https://www.pixiv.net/bookmark.php";
+      chrome.tabs.create({ url: "https://www.pixiv.net/bookmark.php" });
       break;
     case "bookmark_novel":
-      url = "https://www.pixiv.net/novel/bookmark.php";
+      chrome.tabs.create({ url: "https://www.pixiv.net/novel/bookmark.php" });
+      break;
+    case ID_OPTION_JUMP:
+      chrome.storage.local.set({ [ID_OPTION_JUMP]: info.checked });
+      chrome.contextMenus.update(ID_OPTION_JUMP, { checked: info.checked });
       break;
     default:
       return; // NOOP
   }
-  chrome.tabs.create({ url });
 });
