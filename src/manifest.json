@@ -15,6 +15,10 @@
         "https://www.pixiv.net/novel/bookmark_add.php?*"
       ],
       "js": ["index.js"]
+    },
+    {
+      "matches": ["https://www.pixiv.net/jump.php*"],
+      "js": ["jump.js"]
     }
   ],
   "background": {

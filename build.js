@@ -12,7 +12,7 @@ await fs.rm(OUT_DIR, { recursive: true, force: true });
 await fs.mkdir(OUT_DIR, { recursive: true });
 
 await esbuild.build({
-  entryPoints: ["src/index.ts", "src/background.ts"],
+  entryPoints: ["src/index.ts", "src/jump.ts", "src/background.ts"],
   outdir: OUT_DIR,
   format: "esm",
   bundle: true,
