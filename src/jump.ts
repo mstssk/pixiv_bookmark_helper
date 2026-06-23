@@ -20,7 +20,7 @@ import { ID_OPTION_JUMP } from "./constants";
   });
 
   async function countdown(view: HTMLSpanElement) {
-    let remainingSeconds = 5;
+    let remainingSeconds = 3;
     for (; remainingSeconds >= 0; remainingSeconds--) {
       view.textContent = ` ${remainingSeconds}秒後に移動します`;
       if (remainingSeconds > 0) {
