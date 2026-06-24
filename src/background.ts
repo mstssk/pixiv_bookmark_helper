@@ -18,17 +18,19 @@ chrome.runtime.onInstalled.addListener(() => {
     title: "オプション",
     contexts: ["action"],
   });
-  chrome.storage.local.get(ID_OPTION_JUMP).then((items) => {
-    const checked = items[ID_OPTION_JUMP] ?? false;
-    chrome.contextMenus.create({
-      parentId: optionsId,
-      id: ID_OPTION_JUMP,
-      title: "別サイトへのリンクを自動でジャンプする",
-      contexts: ["action"],
-      type: "checkbox",
-      checked,
+  chrome.storage.local
+    .get<{ [ID_OPTION_JUMP]: boolean }>(ID_OPTION_JUMP)
+    .then((items) => {
+      const checked = items[ID_OPTION_JUMP] ?? false;
+      chrome.contextMenus.create({
+        parentId: optionsId,
+        id: ID_OPTION_JUMP,
+        title: "別サイトへのリンクを自動でジャンプする",
+        contexts: ["action"],
+        type: "checkbox",
+        checked,
+      });
     });
-  });
 });
 
 chrome.contextMenus.onClicked.addListener((info) => {
