@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/mstssk/pixiv_bookmark_helper#readme",
   "devDependencies": {
-    "@types/chrome": "^0.1.38",
+    "@types/chrome": "^0.2.0",
     "esbuild": "^0.28.1",
     "typescript": "^5.9.3"
   }
